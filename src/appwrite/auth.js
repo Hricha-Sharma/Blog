@@ -7,13 +7,6 @@ export class AuthService {
     account;
 
     constructor() {
-        if (!conf.appwriteUrl || !conf.appwriteProjectId) {
-            throw new Error('Appwrite URL or Project ID is missing in the configuration.');
-        }
-
-        console.log('Appwrite URL:', conf.appwriteUrl);
-        console.log('Appwrite Project ID:', conf.appwriteProjectId);
-
         this.client
             .setEndpoint(conf.appwriteUrl)
             .setProject(conf.appwriteProjectId);
@@ -23,7 +16,8 @@ export class AuthService {
 
     async createAccount({email, password, name}) {
         try {
-            const userAccount = await this.account.create(ID.unique(), email, password, name);
+            const userAccount = await this.account.create(
+            ID.unique(), email, password, name);
             if (userAccount) {
                 // call another method
                 return this.login({email, password});
