@@ -38,22 +38,22 @@ function Header() {
 
 
   return (
-    <header className='py-3 shadow bg-gray-500'>
+    <header className='p-3 sticky top-0 shadow bg-black'>
       <Container>
         <nav className='flex'>
-          <div className='mr-4'>
-            <Link to='/'>
-              <Logo width='70px'   />
-
+          <div className='flex justify-center items-center rounded-xl text-white hover:text-zinc-300'>
+            <Link to='/' className='flex justify-center items-center p-2'>
+              <Logo width='30px' className='hover:text-white'/>
               </Link>
           </div>
+
           <ul className='flex ml-auto'>
             {navItems.map((item) => 
             item.active ? (
               <li key={item.name}>
                 <button
                 onClick={() => navigate(item.slug)}
-                className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
+                className='inline-bock px-6 py-2 mx-2 duration-200 bg-slate-50 hover:bg-gray-500 hover:text-slate-50 rounded-lg'
                 >{item.name}</button>
               </li>
             ) : null
