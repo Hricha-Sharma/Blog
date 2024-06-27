@@ -43,7 +43,7 @@ function Header() {
         <nav className='flex'>
           <div className='flex justify-center items-center rounded-xl text-white hover:text-zinc-300'>
             <Link to='/' className='flex justify-center items-center p-2'>
-              <Logo width='30px' className='hover:text-white'/>
+              <Logo width='30px' className='hover:text-white' />
               </Link>
           </div>
 
